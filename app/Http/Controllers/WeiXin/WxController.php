@@ -71,15 +71,16 @@ class WxController extends Controller
             if($u){
                 $msg = '欢迎回来';
                 $xml = '<xml>
-  <ToUserName><![CDATA['.$openid.']]></ToUserName>
-  <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
-  <CreateTime>'.time().'</CreateTime>
-  <MsgType><![CDATA[text]]></MsgType>
-  <Content><![CDATA['.$msg.']]></Content>
-</xml>';
+                <ToUserName><![CDATA['.$openid.']]></ToUserName>
+                <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
+                <CreateTime>'.time().'</CreateTime>
+                <MsgType><![CDATA[text]]></MsgType>
+                <Content><![CDATA['.$msg.']]></Content>
+                </xml>';
                 echo $xml;
-            // echo __LINE__;die;
+                // echo __LINE__;die;
             }else{
+                // echo __LINE__;die;
                  //获取用户信息 zcza
                  $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
                  $user_info = file_get_contents($url);       //
@@ -87,11 +88,11 @@ class WxController extends Controller
                  //echo '<pre>';print_r($u);echo '</pre>';die;
                  //入库用户信息
                  $user_data = [
-                     'openid'    => $openid,
-                     'nickname'  => $u['nickname'],
-                     'sex'       => $u['sex'],
-                     'headimgurl'    => $u['headimgurl'],
-                     'subscribe_time'    => $u['subscribe_time']
+                     'openid' => $openid,
+                     'nickname' => $u['nickname'],
+                     'sex' => $u['sex'],
+                     'headimgurl' => $u['headimgurl'],
+                     'subscribe_time' => $u['subscribe_time']
                  ];
                  //openid 入库
                  $uid = WxUserModel::insertGetId($user_data);
@@ -105,6 +106,7 @@ class WxController extends Controller
                  <Content><![CDATA['.$msg.']]></Content>
                 </xml>';
                  echo $xml;
+                 
              }
          }
          // 判断消息类型
@@ -115,12 +117,12 @@ class WxController extends Controller
          if($msg_type=='text'){
              $content = date('Y-m-d H:i:s') . $xml_obj->Content;
              $response_text = '<xml>
-   <ToUserName><![CDATA['.$touser.']]></ToUserName>
-   <FromUserName><![CDATA['.$fromuser.']]></FromUserName>
-   <CreateTime>'.$time.'</CreateTime>
-   <MsgType><![CDATA[text]]></MsgType>
-   <Content><![CDATA['.$content.']]></Content>
- </xml>';
+            <ToUserName><![CDATA['.$touser.']]></ToUserName>
+            <FromUserName><![CDATA['.$fromuser.']]></FromUserName>
+            <CreateTime>'.$time.'</CreateTime>
+            <MsgType><![CDATA[text]]></MsgType>
+            <Content><![CDATA['.$content.']]></Content>
+            </xml>';
              echo $response_text;            // 回复用户消息
          }
      }
