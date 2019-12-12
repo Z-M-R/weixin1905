@@ -61,12 +61,10 @@ class WxController extends Controller
         $xml_str = file_get_contents("php://input");
         $data =date('Y-m-d H:i:s') . '>>>' . $xml_str . "\n\n";
         file_put_contents($log_file,$data,FILE_APPEND);   //追加写
-    
-        $xml_arr = simplexml_load_string($xml_str);
-
 
         // 处理xml数据
         $xml_obj = simplexml_load_string($xml_str);
+
         $event = $xml_obj->Event;   //获取事件类型
         if($event=='subscribe'){
             $openid = $xml_obj->FromUserName;   // 获取用户的openid
@@ -84,10 +82,6 @@ class WxController extends Controller
               </xml>';
               echo $xml;
             }else{
-                $user_data = [
-                    'openid' => $openid,
-                    'sub_time' => $xml_obj->CreateTime,
-                ];
 
                 //获取用户信息
                 $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
