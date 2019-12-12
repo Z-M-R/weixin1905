@@ -80,7 +80,7 @@ class WxController extends Controller
                 echo $xml;
                 // echo __LINE__;die;
             }else{
-                // echo __LINE__;die;
+               
                  //获取用户信息 zcza
                  $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
                  $user_info = file_get_contents($url);       //
@@ -93,7 +93,8 @@ class WxController extends Controller
                      'sex' => $u['sex'],
                      'headimgurl' => $u['headimgurl'],
                      'subscribe_time' => $u['subscribe_time']
-                 ];
+                 ]; 
+                //  echo __LINE__;die;
                  //openid 入库
                  $uid = WxUserModel::insertGetId($user_data);
                  $msg = "谢谢关注";
