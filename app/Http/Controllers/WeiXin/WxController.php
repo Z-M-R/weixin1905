@@ -59,7 +59,7 @@ class WxController extends Controller
         $log_file = "wx.log";
         //将接收的数据记录到日志文件
         $xml_str = file_get_contents("php://input");
-        $data =date('Y-m-d H:i:s')  . $xml_str;
+        $data =date('Y-m-d H:i:s') . '>>>' . $xml_str . "\n\n";
         file_put_contents($log_file,$data,FILE_APPEND);   //追加写
     
         $xml_arr = simplexml_load_string($xml_str);
@@ -73,26 +73,54 @@ class WxController extends Controller
             //判断用户是否已存在
             $u = WxUserModel::where(['openid'=>$openid])->first();
             if($u){
+                $msg = '欢迎回来';
                 //TODO 欢迎回来
-                echo "欢迎回来";die;
+                $xml = '<xml>
+                <ToUserName><![CDATA['.$openid.']]></ToUserName>
+                <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
+                <CreateTime>'.time().'</CreateTime>
+                <MsgType><![CDATA[text]]></MsgType>
+                <Content><![CDATA['.$msg.']]></Content>
+              </xml>';
+              echo $xml;
             }else{
                 $user_data = [
                     'openid' => $openid,
                     'sub_time' => $xml_obj->CreateTime,
                 ];
-    
+
+                //获取用户信息
+                $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
+                $user_info = file_get_contents($url);   //
+                $u = json_decode($user_info,true);
+                // echo '<pre>';print_r($u);echo '</pre>';die;
+                
+                // $nickname=$u['nickname'];
+                // 入库用户信息
+                $user_data = [
+                    'openid' => $openid,
+                    'nickname' => $u['nickname'],
+                    'sex' => $u['sex'],
+                    'headimgurl' => $u['headimgurl'],
+                    'subscribe_time' => $u['subscribe_time']
+                ];
+
                 //openid 入库
                 $uid = WxUserModel::insertGetId($user_data);
-                var_dump($uid);
-                // echo "欢迎关注";
+                
+                $msg = "谢谢关注";
+                // 回复用户关注
+                $xml = '<xml>
+                <ToUserName><![CDATA['.$openid.']]></ToUserName>
+                <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
+                <CreateTime>'.time().'</CreateTime>
+                <MsgType><![CDATA[text]]></MsgType>
+                <Content><![CDATA['.$msg.']]></Content>
+              </xml>';
                 die;
             }
            
 
-            //获取用户信息
-            $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
-            $user_info = file_get_contents($url);   //
-            file_put_contents('wx_user.log',$user_info,FILE_APPEND);
         
         
         }
