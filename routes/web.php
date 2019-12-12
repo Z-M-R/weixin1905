@@ -29,4 +29,4 @@ Route::get('/test/xml','Test\TestController@xmlTest');
 // 微信开发
 
 Route::get('/wx','WeiXin\WxController@wechat');
-// Route::post('/wx','WeiXin\WxController@receiv');
+Route::post('/wx','WeiXin\WxController@receiv');
