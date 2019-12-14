@@ -26,8 +26,6 @@ Route::get('/info',function(){
     phpinfo();
 });
 
-
-
 Route::get('/user/adduser','User\LoginController@addUser');
 Route::get('/user/add','User\LoginController@add');
 Route::get('/test/baidu','Test\TestController@baidu');
