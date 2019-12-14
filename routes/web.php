@@ -10,6 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    $file_name = "abc.mp3";
+    $info = pathinfo($file_name);
+    echo $file_name . '的文件扩展名为000 : ' . pathinfo($file_name)['extension'];die;
+    echo '<pre>';print_r($info);echo '</pre>';die;
+    return view('welcome');
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,4 +36,7 @@ Route::get('/test/xml','Test\TestController@xmlTest');
 // 微信开发
 
 Route::get('/wx','WeiXin\WxController@wechat');
+Route::get('/wx/test','WeiXin\WxController@test');
 Route::post('/wx','WeiXin\WxController@receiv');
+Route::get('/wx/media','WeiXin\WxController@getMedia');  //获取临时素材
+Route::get('/wx/flush/access_token','WeiXin\WxController@flushAccessToken'); 
