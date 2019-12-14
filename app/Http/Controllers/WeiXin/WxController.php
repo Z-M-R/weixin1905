@@ -5,7 +5,7 @@ namespace App\Http\Controllers\WeiXin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\WxUserModel;
-use Illuminate\support\Facades\Redis;
+// use Illuminate\support\Facades\Redis;
 
 use GuzzleHttp\Client;
 
@@ -19,25 +19,25 @@ class WxController extends Controller
         $this->access_token = $this->getAccessToken();
     }
 
-    public function test()
-    {
-        echo $this->access_token;
-    }
+    // public function test()
+    // {
+    //     echo $this->access_token;
+    // }
 
     protected function getAccessToken()
     {
-        $key = 'wx_access_token';
-        $access_token = Redis::get($key);
-        if($access_token){
-            return $access_token;
-        }
+        // $key = 'wx_access_token';
+        // $access_token = Redis::get($key);
+        // if($access_token){
+        //     return $access_token;
+        // }
 
         $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.env('WX_APPID').'&secret='.env('WX_APPSWCRET');
         $data_json = file_get_contents($url);
         $arr = json_decode($data_json,true);
 
-        Redis::set($key,$arr['access_token']);
-        Redis::expire($key,3600);
+        // Redis::set($key,$arr['access_token']);
+        // Redis::expire($key,3600);
         return $arr['access_token'];
 
 
