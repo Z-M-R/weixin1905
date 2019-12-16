@@ -148,52 +148,52 @@ class WxController extends Controller
 
 
              // TODO 消息入库
-             
-         }elseif($msg_type=='image'){       // 图片消息
-            // TODO 下载图片
-            $this->getMedia2($media_id,$msg_type);
-            // TODO 回复图片
-            $response = '<xml>
-            <ToUserName><![CDATA['.$touser.']]></ToUserName>
-            <FromUserName><![CDATA['.$fromuser.']]></FromUserName>
-            <CreateTime>'.time().'</CreateTime>
-            <MsgType><![CDATA[image]]></MsgType>
-            <Image>
-            <MediaId><![CDATA['.$media_id.']]></MediaId>
-            </Image>
-            </xml>';
-            echo $response;
-         }elseif($msg_type=='voice'){         // 语音消息
-             // 下载语音
-            $this->getMedia2($media_id,$msg_type);
-            // TODO 回复语音
-            $response = '<xml>
-            <ToUserName><![CDATA['.$touser.']]></ToUserName>
-            <FromUserName><![CDATA['.$fromuser.']]></FromUserName>
-            <CreateTime>'.time().'</CreateTime>
-            <MsgType><![CDATA[voice]]></MsgType>
-            <Voice>
-            <MediaId><![CDATA['.$media_id.']]></MediaId>
-            </Voice>
-            </xml>';
-            echo $response;
-         }elseif($msg_type=='video'){
-            // 下载小视频
-            $this->getMedia2($media_id,$msg_type);
-            // 回复
-            $response = '<xml>
-            <ToUserName><![CDATA['.$touser.']]></ToUserName>
-            <FromUserName><![CDATA['.$fromuser.']]></FromUserName>
-            <CreateTime>'.time().'</CreateTime>
-            <MsgType><![CDATA[video]]></MsgType>
-            <Video>
-            <MediaId><![CDATA['.$media_id.']]></MediaId>
-            <Title><![CDATA[测试]]></Title>
-            <Description><![CDATA[不可描述]]></Description>
-            </Video>
-            </xml>';
-            echo $response;
-        }
+            } 
+        //  elseif($msg_type=='image'){       // 图片消息
+        //     // TODO 下载图片
+        //     $this->getMedia2($media_id,$msg_type);
+        //     // TODO 回复图片
+        //     $response = '<xml>
+        //     <ToUserName><![CDATA['.$touser.']]></ToUserName>
+        //     <FromUserName><![CDATA['.$fromuser.']]></FromUserName>
+        //     <CreateTime>'.time().'</CreateTime>
+        //     <MsgType><![CDATA[image]]></MsgType>
+        //     <Image>
+        //     <MediaId><![CDATA['.$media_id.']]></MediaId>
+        //     </Image>
+        //     </xml>';
+        //     echo $response;
+        //  }elseif($msg_type=='voice'){         // 语音消息
+        //      // 下载语音
+        //     $this->getMedia2($media_id,$msg_type);
+        //     // TODO 回复语音
+        //     $response = '<xml>
+        //     <ToUserName><![CDATA['.$touser.']]></ToUserName>
+        //     <FromUserName><![CDATA['.$fromuser.']]></FromUserName>
+        //     <CreateTime>'.time().'</CreateTime>
+        //     <MsgType><![CDATA[voice]]></MsgType>
+        //     <Voice>
+        //     <MediaId><![CDATA['.$media_id.']]></MediaId>
+        //     </Voice>
+        //     </xml>';
+        //     echo $response;
+        //  }elseif($msg_type=='video'){
+        //     // 下载小视频
+        //     $this->getMedia2($media_id,$msg_type);
+        //     // 回复
+        //     $response = '<xml>
+        //     <ToUserName><![CDATA['.$touser.']]></ToUserName>
+        //     <FromUserName><![CDATA['.$fromuser.']]></FromUserName>
+        //     <CreateTime>'.time().'</CreateTime>
+        //     <MsgType><![CDATA[video]]></MsgType>
+        //     <Video>
+        //     <MediaId><![CDATA['.$media_id.']]></MediaId>
+        //     <Title><![CDATA[测试]]></Title>
+        //     <Description><![CDATA[不可描述]]></Description>
+        //     </Video>
+        //     </xml>';
+        //     echo $response;
+        // }
      }
      /**
       * 获取用户基本信息
