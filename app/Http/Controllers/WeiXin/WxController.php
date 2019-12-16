@@ -134,6 +134,7 @@ class WxController extends Controller
 
          $time = time();
 
+         $media_id = $xml_obj->MediaId;
 
          if($msg_type=='text'){
              $content = date('Y-m-d H:i:s') . $xml_obj->Content;
