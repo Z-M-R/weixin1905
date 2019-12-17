@@ -5,7 +5,10 @@ namespace App\Http\Controllers\WeiXin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\WxUserModel;
-// use Illuminate\Support\Facades\Redis;
+use App\Model\WxMsgModel;
+use App\Model\WxVoiceModel;
+use App\Model\WxImgModel;
+use Illuminate\Support\Facades\Redis;
 
 use GuzzleHttp\Client;
 
@@ -19,25 +22,25 @@ class WxController extends Controller
         $this->access_token = $this->getAccessToken();
     }
 
-    // public function test()
-    // {
-    //     echo $this->access_token;
-    // }
+    public function test()
+    {
+        echo $this->access_token;
+    }
 
     protected function getAccessToken()
     {
-        // $key = 'wx_access_token';
-        // $access_token = Redis::get($key);
-        // if($access_token){
-        //     return $access_token;
-        // }
+        $key = 'wx_access_token';
+        $access_token = Redis::get($key);
+        if($access_token){
+            return $access_token;
+        }
 
         $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.env('WX_APPID').'&secret='.env('WX_APPSWCRET');
         $data_json = file_get_contents($url);
         $arr = json_decode($data_json,true);
 
-        // Redis::set($key,$arr['access_token']);
-        // Redis::expire($key,3600);
+        Redis::set($key,$arr['access_token']);
+        Redis::expire($key,3600);
         return $arr['access_token'];
 
 
@@ -104,11 +107,11 @@ class WxController extends Controller
                  //echo '<pre>';print_r($u);echo '</pre>';die;
                  //入库用户信息
                  $user_data = [
-                     'openid' => $openid,
-                     'nickname' => $u['nickname'],
-                     'sex' => $u['sex'],
-                     'headimgurl' => $u['headimgurl'],
-                     'subscribe_time' => $u['subscribe_time']
+                    'openid' => $openid,
+                    'nickname' => $u['nickname'],
+                    'sex' => $u['sex'],
+                    'headimgurl' => $u['headimgurl'],
+                    'subscribe_time' => $u['subscribe_time']
                  ]; 
                 //  echo __LINE__;die;
                  //openid 入库
@@ -131,13 +134,24 @@ class WxController extends Controller
 
          $touser = $xml_obj->FromUserName;       //接收消息的用户openid
          $fromuser = $xml_obj->ToUserName;       // 开发者公众号的 ID
-
          $time = time();
 
          $media_id = $xml_obj->MediaId;
 
          if($msg_type=='text'){
              $content = date('Y-m-d H:i:s') . $xml_obj->Content;
+             $openid = $xml_obj->FromUserName; 
+             $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
+             $msg_info = file_get_contents($url);       
+             $m = json_decode($msg_info,true);
+             $Msg_data = [
+                'openid' => $openid,
+                'nickname' => $m['nickname'],
+                'content' => $xml_obj->Content,
+            ]; 
+            //openid 入库
+            $uid = WxMsgModel::insertGetId($Msg_data);
+
              $response_text = '<xml>
             <ToUserName><![CDATA['.$touser.']]></ToUserName>
             <FromUserName><![CDATA['.$fromuser.']]></FromUserName>
@@ -153,6 +167,20 @@ class WxController extends Controller
          }elseif($msg_type=='image'){       // 图片消息
             // TODO 下载图片
             $this->getMedia2($media_id,$msg_type);
+
+            // //图片入库
+            // $openid = $xml_obj->FromUserName; 
+            //  $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
+            //  $img_info = file_get_contents($url);       
+            //  $i = json_decode($img_info,true);
+            //  $Img_data = [
+            //     'openid' => $openid,
+            //     'nickname' => $i['nickname'],
+            //     'imgs' => $media_id,
+            // ]; 
+            // //openid 入库
+            // $uid = WxImgModel::insertGetId($Img_data);
+
             // TODO 回复图片
             $response = '<xml>
             <ToUserName><![CDATA['.$touser.']]></ToUserName>
@@ -167,6 +195,20 @@ class WxController extends Controller
          }elseif($msg_type=='voice'){         // 语音消息
              // 下载语音
             $this->getMedia2($media_id,$msg_type);
+
+        //     //语音入库
+        //     $openid = $xml_obj->FromUserName; 
+        //     $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
+        //     $voice_info = file_get_contents($url);       
+        //     $v = json_decode($voice_info,true);
+        //     $voice_data = [
+        //        'openid' => $openid,
+        //        'nickname' => $v['nickname'],
+        //        'voice' => $media_id,
+        //    ]; 
+        //    //openid 入库
+        //    $uid = WxVoiceModel::insertGetId($voice_data);
+
             // TODO 回复语音
             $response = '<xml>
             <ToUserName><![CDATA['.$touser.']]></ToUserName>
@@ -260,5 +302,41 @@ class WxController extends Controller
         echo $this->getAccessToken();
     }
 
+    /*
+        创建自定义菜单
+    */
+    public function createMenu()
+    {
+        $url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='.$this->access_token;
+        $menu = [
+            'button' =>[
+                [
+                    'type' => 'click',
+                    'name' => '1905wx',
+                    'key' => '1905wx_key'
+                ],
+                [
+                    'type' => 'click',
+                    'name' => '1905wx2',
+                    'key' => '1905wx_key2'
+                ],
+                [
+                    'type' => 'click',
+                    'name' => '1905wx3',
+                    'key' => '1905wx_key3'
+                ]
+            ]
+        ];
+
+        $menu_json = json_encode($menu);
+        $client = new Client();
+        $response = $client->request('POST',$url,[
+            'body' => $menu_json
+        ]);
+
+        echo '<pre>';print_r($menu);echo '</pre>';
+        echo $response->getBody();
+
+    }
 
 }
