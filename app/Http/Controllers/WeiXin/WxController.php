@@ -130,19 +130,6 @@ class WxController extends Controller
                  echo $xml;
                  
             }
-        }elseif($event=='CLICK'){      //菜单点击事件
-            // 如果是 获取天气
-            if($xml_obj->EventKey=='weather'){
-                $response_xml = '<xml>
-                <ToUserName><![CDATA['.$openid.']]></ToUserName>
-                <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
-                <CreateTime>'.time().'</CreateTime>
-                <MsgType><![CDATA[text]]></MsgType>
-                <Content><![CDATA['.date('Y-m-d H:i:s') . '晴天' .']]></Content>
-                </xml>';
-
-                echo $response_xml;
-            }
         }
          // 判断消息类型
          $msg_type = $xml_obj->MsgType;
