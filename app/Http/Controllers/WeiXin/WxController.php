@@ -130,6 +130,19 @@ class WxController extends Controller
                  echo $xml;
                  
             }
+        }elseif($event=='CLICK'){      //菜单点击事件
+            // 如果是 获取天气
+            if($xml_obj->EventKey=='weather'){
+                $response_xml = '<xml>
+                <ToUserName><![CDATA['.$openid.']]></ToUserName>
+                <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
+                <CreateTime>'.time().'</CreateTime>
+                <MsgType><![CDATA[text]]></MsgType>
+                <Content><![CDATA['.date('Y-m-d H:i:s') . '晴天' .']]></Content>
+                </xml>';
+
+                echo $response_xml;
+            }
         }
          // 判断消息类型
          $msg_type = $xml_obj->MsgType;
@@ -170,19 +183,6 @@ class WxController extends Controller
             // TODO 下载图片
             $this->getMedia2($media_id,$msg_type);
 
-            // //图片入库
-            // $openid = $xml_obj->FromUserName; 
-            //  $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
-            //  $img_info = file_get_contents($url);       
-            //  $i = json_decode($img_info,true);
-            //  $Img_data = [
-            //     'openid' => $openid,
-            //     'nickname' => $i['nickname'],
-            //     'imgs' => $media_id,
-            // ]; 
-            // //openid 入库
-            // $uid = WxImgModel::insertGetId($Img_data);
-
             // TODO 回复图片
             $response = '<xml>
             <ToUserName><![CDATA['.$touser.']]></ToUserName>
@@ -197,19 +197,6 @@ class WxController extends Controller
          }elseif($msg_type=='voice'){         // 语音消息
              // 下载语音
             $this->getMedia2($media_id,$msg_type);
-
-        //     //语音入库
-        //     $openid = $xml_obj->FromUserName; 
-        //     $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
-        //     $voice_info = file_get_contents($url);       
-        //     $v = json_decode($voice_info,true);
-        //     $voice_data = [
-        //        'openid' => $openid,
-        //        'nickname' => $v['nickname'],
-        //        'voice' => $media_id,
-        //    ]; 
-        //    //openid 入库
-        //    $uid = WxVoiceModel::insertGetId($voice_data);
 
             // TODO 回复语音
             $response = '<xml>

@@ -13,6 +13,4 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('admin.home');
     $router->resource('users', WxUserController::class);
     $router->resource('wxmsg', WxMsgController::class);
-    $router->resource('wximg', WxImgController::class);
-    $router->resource('wxvoice', WxVoiceController::class);
 });
