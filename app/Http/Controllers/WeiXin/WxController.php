@@ -129,8 +129,8 @@ class WxController extends Controller
                 </xml>';
                  echo $xml;
                  
-             }
-         }elseif($event=='CLICK'){      //菜单点击事件
+            }
+        }elseif($event=='CLICK'){      //菜单点击事件
             // 如果是 获取天气
             if($xml_obj->EventKey=='weather'){
                 $response_xml = '<xml>
@@ -143,7 +143,7 @@ class WxController extends Controller
 
                 echo $response_xml;
             }
-         }
+        }
          // 判断消息类型
          $msg_type = $xml_obj->MsgType;
 
@@ -252,7 +252,7 @@ class WxController extends Controller
             </xml>';
             echo $response;
         }
-     }
+} 
      /**
       * 获取用户基本信息
       */
