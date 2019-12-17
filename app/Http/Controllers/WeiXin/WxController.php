@@ -138,7 +138,7 @@ class WxController extends Controller
                 <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
                 <CreateTime>'.time().'</CreateTime>
                 <MsgType><![CDATA[text]]></MsgType>
-                <Content><![CDATA['.date('Y-m-d H:i:s') . '晴天 我在想你 阴天' .']]></Content>
+                <Content><![CDATA['.date('Y-m-d H:i:s') . '晴天 我在想你 ' .']]></Content>
                 </xml>';
 
                 echo $response_xml;
