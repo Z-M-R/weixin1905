@@ -66,8 +66,8 @@ class WxMsgController extends AdminController
         $form = new Form(new WxMsgModel);
 
         $form->text('openid', __('Openid'));
-        $form->text('nickname', __('Nickname'));
-        $form->text('content', __('Content'));
+        $form->text('nickname', __('昵称'));
+        $form->text('content', __('留言'));
 
         return $form;
     }

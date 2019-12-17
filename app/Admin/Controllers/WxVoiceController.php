@@ -67,7 +67,7 @@ class WxVoiceController extends AdminController
 
         $form->text('openid', __('Openid'));
         $form->text('nickname', __('Nickname'));
-        $form->text('voice', __('Voice'));
+        $form->text('voice', __('语音'));
 
         return $form;
     }
