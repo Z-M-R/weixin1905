@@ -45,10 +45,9 @@ class VoteController extends Controller
         $json_data = file_get_contents($url);
         $data = json_decode($json_data,true);
         if(isset($data['errcode'])){
-            //TODO 错误处理
-            die("出错了 40001");        // 40001 标识获取用户信息失败
+            // TODO  错误处理
+            die("出错了 40001");       // 40001 标识获取用户信息失败
         }
-
-        return $data;       // 返回用户信息
+        return $data;           // 返回用户信息
     }
 }
