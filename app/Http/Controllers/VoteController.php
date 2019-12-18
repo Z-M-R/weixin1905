@@ -9,12 +9,14 @@ class VoteController extends Controller
 {
     public function index()
     {
-        echo '<pre>';print_r($_GET);echo '</pre>';
+        // echo '<pre>';print_r($_GET);echo '</pre>';
         $code = $_GET['code'];
         //获取access_token
         $data = $this->getAccessToken($code);
         //获取用户信息
         $user_info = $this->getUserInfo($data['access_token'],$data['openid']);
+
+        //处理业务逻辑
 
         $openid = $user_info['openid'];
         $key = 'ss:vote:zhangsan';
@@ -34,9 +36,9 @@ class VoteController extends Controller
         foreach($members as $k => $v){
             echo "用户：" . $k . '投票时间：' . date('Y-m-d H:i:s',$v);echo '</br>';
         }
-        $total = Redis::Scard($key);        // 统计投票总认识
-        echo "投票总人数：" . $total;
-        echo '<pre>';print_r($members);echo '</pre>';
+        // $total = Redis::Scard($key);        // 统计投票总认识
+        // echo "投票总人数：" . $total;
+        // echo '<pre>';print_r($members);echo '</pre>';
 
 
     }
