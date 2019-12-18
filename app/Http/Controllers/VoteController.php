@@ -19,21 +19,22 @@ class VoteController extends Controller
         $redis_key = 'vote';
         $number = Redis::incr($redis_key);
         echo "投票成功，当前票数： ". $number;
-
     }
-
-
-    //根据code获取access_token
+    /**
+     * 根据code获取access_token
+     * @param $code
+     */
     protected function getAccessToken($code)
     {
         $url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='.env('WX_APPID').'&secret='.env('WX_APPSECRET').'&code='.$code.'&grant_type=authorization_code';
         $json_data = file_get_contents($url);
         return json_decode($json_data,true);
-
     }
-
-
-    //获取用户基本信息
+    /**
+     * 获取用户基本信息
+     * @param $access_token
+     * @param $openid
+     */
     protected function getUserInfo($access_token,$openid)
     {
         $url = 'https://api.weixin.qq.com/sns/userinfo?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
