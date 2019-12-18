@@ -9,21 +9,16 @@ class VoteController extends Controller
 {
     public function index()
     {
-        // echo '<pre>';print_r($_GET);echo '</pre>';
-
+        //echo '<pre>';print_r($_GET);echo '</pre>';
         $code = $_GET['code'];
-
         //获取access_token
-        // TODO 判断是否已经投过 使用redis 集合 或有序集合
-
         $data = $this->getAccessToken($code);
         //获取用户信息
         $user_info = $this->getUserInfo($data['access_token'],$data['openid']);
-
         // 处理业务逻辑
         $redis_key = 'vote';
         $number = Redis::incr($redis_key);
-        echo "投票成功，当前票数：" . $number;
+        echo "投票成功，当前票数： ". $number;
 
     }
 
@@ -31,9 +26,9 @@ class VoteController extends Controller
     //根据code获取access_token
     protected function getAccessToken($code)
     {
-        $url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='.env('WX_APPID').'&secret='.env('WX_APPSWCRET').'&code='.$code.'&grant_type=authorization_code';
+        $url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='.env('WX_APPID').'&secret='.env('WX_APPSECRET').'&code='.$code.'&grant_type=authorization_code';
         $json_data = file_get_contents($url);
-        return json_decode('$json_data',true);
+        return json_decode($json_data,true);
 
     }
 
