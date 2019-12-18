@@ -15,10 +15,17 @@ class VoteController extends Controller
         $data = $this->getAccessToken($code);
         //获取用户信息
         $user_info = $this->getUserInfo($data['access_token'],$data['openid']);
-        // 处理业务逻辑
-        $redis_key = 'vote';
-        $number = Redis::incr($redis_key);
-        echo "投票成功，当前票数： ". $number;
+
+        $openid = $user_info['openid'];
+        $key = 's:vote:zhangsan';
+        Redis::Sadd($key,$openid);
+
+        $members = Redis::$members($key);       // 获取所有投票人的openid
+        $total = Redis::Scard($key);        // 统计投票总认识
+        echo "投票总人数：" . $total;
+        echo '<pre>';print_r($members);echo '</pre>';
+
+
     }
     /**
      * 根据code获取access_token
