@@ -17,17 +17,23 @@ class VoteController extends Controller
         $user_info = $this->getUserInfo($data['access_token'],$data['openid']);
 
         $openid = $user_info['openid'];
-        $key = 's:vote:zhangsan';
+        $key = 'ss:vote:zhangsan';
 
         //判断是否已经投过票
-        if(Redis::sIsMember($key,$user_info['openid'])){
+        if(Redis::zrank($key,$user_info['openid'])){
             echo "已经投过票了";
         }else{
-            Redis::Sadd($key,$openid);
+            Redis::zadd($key,time(),$openid);
         }
         
 
-        $members = Redis::$members($key);       // 获取所有投票人的openid
+        $total = Redis::zCard($key);
+        echo '投票总人数：' . $total;echo '</br>';
+        $members = Redis::zRange($key,0,-1,true);       // 获取所有投票人的openid
+        echo '<pre>';print_r($members);echo '</pre>';
+        foreach($members as $k => $v){
+            echo "用户：" . $k . '投票时间：' . date('Y-m-d H:i:s',$v);echo '</br>';
+        }
         $total = Redis::Scard($key);        // 统计投票总认识
         echo "投票总人数：" . $total;
         echo '<pre>';print_r($members);echo '</pre>';
