@@ -311,8 +311,8 @@ class WxController extends Controller
     */
     public function createMenu()
     {
-        $url = 'http://weixin1905.zmrzzj.com/vote';
-        $redirect_uri = urlencode($url);    //授权后跳转页面
+        $url = 'http://weixin.zmrzzj.com/vote';
+        $redirect_uri = urlencode($url);
 
         //创建自定义菜单的接口地址
         $url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='.$this->access_token;
@@ -324,9 +324,9 @@ class WxController extends Controller
                     'key' => 'weather'
                 ],
                 [
-                    'type' => 'view',
-                    'name' => '投票',
-                    'url' =>  'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe859cb9513f3030c&redirect_uri='.$redirect_uri.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
+                    'type'  => 'view',
+                    'name'  => '投票',
+                    'url'   => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe859cb9513f3030c&redirect_uri='.$redirect_uri.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
                 ],
             ]
         ];
