@@ -30,7 +30,7 @@ Route::get('/user/adduser','User\LoginController@addUser');
 Route::get('/user/add','User\LoginController@add');
 Route::get('/test/baidu','Test\TestController@baidu');
 Route::get('/test/xml','Test\TestController@xmlTest');
-Route::get('/dev/redis/del','VoteController@xmlTest');
+Route::get('/dev/redis/del','VoteController@delKey');
 
 // 微信开发
 

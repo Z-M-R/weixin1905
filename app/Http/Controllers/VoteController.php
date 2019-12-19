@@ -7,49 +7,43 @@ use Illuminate\Support\Facades\Redis;
 
 class VoteController extends Controller
 {
+    //测试使用，线上禁用
+    public function delKey()
+    {
+        $key = $_GET['k'];
+        echo 'Delete Key: '.$key;echo '</br>';
+        Redis::del($key);
+    }
+
+
     public function index()
     {
-        // echo '<pre>';print_r($_GET);echo '</pre>';
-        $code = $_GET['code'];
-        //获取access_token
-        $data = $this->getAccessToken($code);
-        //获取用户信息
-        $user_info = $this->getUserInfo($data['access_token'],$data['openid']);
-        //保存用户信息
-        $userinfo_key = 'h:u:' . $data['openid'];
-        Redis::hMset($userinfo_key,$user_info);
-
-
-        //处理业务逻辑
-
-        $openid = $user_info['openid'];
-        $key = 'ss:vote:zhangsan';
-
-        //判断是否已经投过票
-        if(Redis::zrank($key,$user_info['openid'])){
-            echo "已经投过票了";
-        }else{
-            Redis::zadd($key,time(),$openid);
-        }
-        
-
-        $total = Redis::zCard($key);
-        echo '投票总人数：' . $total;echo '</br>'; 
-        $members = Redis::zRange($key,0,-1,true);       // 获取所有投票人的openid
-        echo '<pre>';print_r($members);echo '</pre>';echo '<hr>';
-        foreach($members as $k => $v){
-            echo "用户：" . $k . '投票时间：' . date('Y-m-d H:i:s',$v);echo '</br>';
-            $u_k = 'h:u:' . $k;
-            $u = Redis::hgetAll($u_k,['openid','nickname','sex']);
-            echo '<pre>';print_r($u);echo '</pre>';echo '<hr>';
-            echo '<img src="' . $u['headimgurl'] . '">';echo '</br>';
-
-        }
-        // $total = Redis::Scard($key);        // 统计投票总认识
-        // echo "投票总人数：" . $total;
-        // echo '<pre>';print_r($members);echo '</pre>';
-
-
+       //echo '<pre>';print_r($_GET);echo '</pre>';
+       $code = $_GET['code'];
+       //获取access_token
+       $data = $this->getAccessToken($code);
+       //获取用户信息
+       $user_info = $this->getUserInfo($data['access_token'],$data['openid']);
+       //保存用户信息
+       $userinfo_key = 'h:u:'.$data['openid'];
+       Redis::hMset($userinfo_key,$user_info);
+       // 处理业务逻辑
+       $openid = $user_info['openid'];
+       $key = 'ss:vote:zhangsan';
+       //判断是否已经投过票
+       if(Redis::zrank($key,$user_info['openid'])){
+           echo "已经投过票了";echo '</br>';
+       }else{
+           Redis::Zadd($key,time(),$openid);
+       }
+       $total = Redis::zCard($key);        // 获取总数
+       $members = Redis::zRange($key,0,-1,true);       // 获取所有投票人的openid
+       foreach($members as $k=>$v){
+           $u_k = 'h:u:'.$k;
+           $u = Redis::hgetAll($u_k);
+           //$u = Redis::hMget($u_k,['openid','nickname','sex','headimgurl']);
+           echo ' <img src="'.$u['headimgurl'].'"> ';
+       }
     }
     /**
      * 根据code获取access_token
