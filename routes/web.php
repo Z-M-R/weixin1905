@@ -18,9 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/','Index\IndexController@index');
+
 
 Route::get('/info',function(){
     phpinfo();
