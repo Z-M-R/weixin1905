@@ -1,0 +1,455 @@
+[33mcommit 1b1d1041d8e98faa87fe7a68a6140d7bc7572167[m[33m ([m[1;36mHEAD -> [m[1;32mstore[m[33m)[m
+Author: Your Name <you@example.com>
+Date:   Thu Dec 19 11:05:26 2019 +0000
+
+    调整头像大小
+
+[33mcommit 88e4b75b800b36e0c1f8362a6f37e16f65808ca6[m[33m ([m[1;31morigin/store[m[33m)[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 11:00:28 2019 +0000
+
+    用户授权
+
+[33mcommit f63d8b89635180863a3810498829852476d02521[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 10:32:50 2019 +0000
+
+    网站首页
+
+[33mcommit 604f15ac7d4dd5cdf0d00809eb963a53c73b6c08[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 06:53:17 2019 +0000
+
+    学习
+
+[33mcommit 500ff0b14344da7f75bf08ab386d930bdccf6f50[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 06:34:37 2019 +0000
+
+    提交
+
+[33mcommit 54bddddc0e195a6b46fb508045b3bb3ae62e3338[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 06:01:42 2019 +0000
+
+    提交
+
+[33mcommit 3edfbb06c6db5321cfab7e08bc6f6e8f9636f0ac[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 05:56:21 2019 +0000
+
+    头像
+
+[33mcommit 3802abea7b7267d3d7a344de8cfe58b70c40c268[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 05:50:18 2019 +0000
+
+    提
+
+[33mcommit 38f9389aebd3e437c54bed5d0c2ca2ec85730484[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 05:13:29 2019 +0000
+
+    交
+
+[33mcommit fa9cb5b0b79e1a1ad0c38912cb4937b09b1bdaf3[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 05:05:21 2019 +0000
+
+    交
+
+[33mcommit de9dde6b8c0dbddca4d5f7dee58bd058ee033be7[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 05:02:48 2019 +0000
+
+    提
+
+[33mcommit 6b9e36356b12759bae6f34096537e998e87c6c54[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 05:01:00 2019 +0000
+
+    交
+
+[33mcommit 541e8b8e8e933d61d48a86d7623eb80f856c1ad5[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 04:58:10 2019 +0000
+
+    提
+
+[33mcommit 3b79d53b900a4c4a047181ef401419a603095769[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 04:37:38 2019 +0000
+
+    修改
+
+[33mcommit eed926c38931462946f567a16029a0da2320adbb[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 04:31:29 2019 +0000
+
+    完成
+
+[33mcommit d79a55cb15f30831988b3913b68ffb57dd478880[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 04:16:37 2019 +0000
+
+    提交
+
+[33mcommit 0f049f50e1a12bb65a27148e46d708c859dc358a[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 04:05:57 2019 +0000
+
+    改错
+
+[33mcommit 86d835236825a027cadf0bea12d232472b25c544[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 04:00:40 2019 +0000
+
+    提交
+
+[33mcommit 1e85449c35b84528cf4e58820ed8a973a77212f3[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Thu Dec 19 00:13:05 2019 +0000
+
+    提交
+
+[33mcommit 665721d1fe3fc0feeecf6f326c0a19153be820f4[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 18:27:16 2019 +0800
+
+    时区
+
+[33mcommit a830b1f33c01ae67e1eefb1d92e3427cdc9d78c8[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 18:07:41 2019 +0800
+
+    禁止
+
+[33mcommit 90ab00c64b73cd771afae3497cc5814eab6a3639[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 18:00:07 2019 +0800
+
+    shangchuan
+
+[33mcommit 406fa1b6649bd7991950d3b6133dc003b91fc65d[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 17:50:23 2019 +0800
+
+    上传
+
+[33mcommit 1aec2b4093781802b27cbfa70a1d3df3bd805515[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 17:48:22 2019 +0800
+
+    tijiao
+
+[33mcommit ded5ccf310944bddc78157b10472f8d4c550f255[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 17:46:44 2019 +0800
+
+    提交
+
+[33mcommit e97daa658f7b32e7dc31e5b4b2e3e56b5d3f5941[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 17:43:21 2019 +0800
+
+    重新提交
+
+[33mcommit a8e43a50138a6a6aac6af44350663ad7cc8150c3[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 17:21:46 2019 +0800
+
+    提交
+
+[33mcommit 07962ffdad78f5c2387011e1a57813082d458637[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 17:10:32 2019 +0800
+
+    上传
+
+[33mcommit 6af607787fec406fb715f1460e38860188172260[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 16:57:01 2019 +0800
+
+    上传
+
+[33mcommit b2dd3e27c1ede0ecfeab6ea65bcbf8eaf44c8ad6[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 16:44:30 2019 +0800
+
+    提交
+
+[33mcommit 2d3a2ee03abc6036a9ed8b65619908854fd35afb[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 15:23:30 2019 +0800
+
+    上传
+
+[33mcommit 55ef3630f97b6b1e31b1f226992e061520a7dcd8[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 15:21:43 2019 +0800
+
+    shangchua
+
+[33mcommit f39b737013d670e24d079595b49b42b5d83e1044[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 15:07:06 2019 +0800
+
+    vote
+
+[33mcommit d648798d64b97dc14ec6f6a6f81dc375b2c90da7[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 14:45:06 2019 +0800
+
+    上传
+
+[33mcommit 64f53359f73505db82cde2008f3c602b26fad088[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 14:38:08 2019 +0800
+
+    提交
+
+[33mcommit 7d9effdbceff87b9f037f86e643c88440f0aa474[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 14:34:28 2019 +0800
+
+    上传
+
+[33mcommit 031d199fceb758fe78a0390bda21ea6c5632c9f1[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 14:20:05 2019 +0800
+
+    改错
+
+[33mcommit a219c4544975f30f399021442816ba61eb9c0138[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 14:13:27 2019 +0800
+
+    投票
+
+[33mcommit 740aefd10649f629988532912b52b5139cf096a4[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 13:57:21 2019 +0800
+
+    vote 4
+
+[33mcommit 3cdb6f7e17311599092d9adddf317efeeec78a09[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 13:43:31 2019 +0800
+
+    vote 上传
+
+[33mcommit 7b588f454296e4617209ffbddff8b8c4316f052a[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 13:27:32 2019 +0800
+
+    vote
+
+[33mcommit 9b7749262346649eb3afe3c44fe26c6971e24766[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 13:25:50 2019 +0800
+
+    vote 1
+
+[33mcommit bf3872df3c38eead39cc400002cff0acf1febc76[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Wed Dec 18 13:17:13 2019 +0800
+
+    vote
+
+[33mcommit 6411683216d0c05807c14810514d4c5c09b1d70e[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Tue Dec 17 18:02:59 2019 +0800
+
+    提交
+
+[33mcommit 410bf438de60f5b4b6f7ddd7750776b347ee7f88[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Tue Dec 17 17:39:50 2019 +0800
+
+    上传
+
+[33mcommit e54589a426abfd081af9fe70746e800d4b618d47[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Tue Dec 17 09:20:23 2019 +0000
+
+    上传
+
+[33mcommit 2b682a2c0d21e52cf94e994ec83dbb2ee518df79[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Tue Dec 17 17:17:12 2019 +0800
+
+    上传
+
+[33mcommit 78c4c7a15e6be7a4edf5a656c3c54f49ce2d74b5[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Tue Dec 17 17:09:05 2019 +0800
+
+    提交
+
+[33mcommit a72abf77d1ca4ed8894aa1cb93a0a6a2a5bc7dbf[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Tue Dec 17 16:51:29 2019 +0800
+
+    上传
+
+[33mcommit a3970d45cf6048598de1e435ba921d38e05733f7[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Tue Dec 17 16:44:42 2019 +0800
+
+    修改
+
+[33mcommit 056fb3fea8bc69738e96085a9fd79411b1f11620[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Tue Dec 17 16:39:42 2019 +0800
+
+    提交
+
+[33mcommit 9a8b67fa1f3e3f81b56c7219e73fa7189d9f0339[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Tue Dec 17 08:12:17 2019 +0000
+
+    获取天气
+
+[33mcommit 45f11795afd0209e7b73851f520f9500042a941e[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Tue Dec 17 16:03:44 2019 +0800
+
+    天气
+
+[33mcommit 01fe09a3098de4cb5ce4eb625e52078d6746c96c[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Tue Dec 17 14:56:59 2019 +0800
+
+    上传
+
+[33mcommit 0ffa574963c39f28c82eed1570f5f3c06bac0b30[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Mon Dec 16 17:39:15 2019 +0800
+
+    修改
+
+[33mcommit 3a1ce56ac8b03b70ba7c745ffe79b06347c71367[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Mon Dec 16 17:32:15 2019 +0800
+
+    图片 语音 视屏
+
+[33mcommit 59008a718c438660e3b9d1ba88d38292225bfb18[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Mon Dec 16 17:30:11 2019 +0800
+
+    回复
+
+[33mcommit 91a11baa2bd36dab9b431f89a404a0731cbeb794[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Mon Dec 16 17:26:21 2019 +0800
+
+    用户管理
+
+[33mcommit 2baa25c86e00f1b4e2e178e82300403075de2b7f[m
+Author: zhang <zhang@localhost.localdomain>
+Date:   Mon Dec 16 08:53:11 2019 +0000
+
+    安装 laravel-admin
+
+[33mcommit 648440601f979c838b1e3ba5ea50fbbc12aab23a[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Sat Dec 14 16:37:03 2019 +0800
+
+    上传
+
+[33mcommit 48598aff7f909774917177742ed35d4d390a25dc[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Sat Dec 14 15:46:49 2019 +0800
+
+    提交
+
+[33mcommit db7496d0eedf0ed8fd2f52295ac9fa1d39878b4b[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Sat Dec 14 14:42:03 2019 +0800
+
+    提交
+
+[33mcommit 113d44d89e8cdff56b2be8e197a5d7207123e710[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Sat Dec 14 14:19:48 2019 +0800
+
+    上传
+
+[33mcommit b754eb5a7c2fe641aa24aa0bc30873be351d4829[m
+Author: root <root@localhost.localdomain>
+Date:   Sat Dec 14 05:45:31 2019 +0000
+
+    提交
+
+[33mcommit 8fd75df9e43c2ef174bde1d946c92a971e0c8621[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Thu Dec 12 21:21:11 2019 +0800
+
+    上传
+
+[33mcommit 11cc1538405720e591d7c64eea98a8fb6d666fba[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Thu Dec 12 21:09:32 2019 +0800
+
+    提交
+
+[33mcommit 488a9ce516bb0023aa08fa42f094a8844d12f985[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Thu Dec 12 21:06:49 2019 +0800
+
+    上传
+
+[33mcommit 29c61b98452162bd26229c8428da6ea953cd138f[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Thu Dec 12 21:02:38 2019 +0800
+
+    提交
+
+[33mcommit bfa120227c0f96cbcd737e0231cf11d973c2f57a[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Thu Dec 12 20:32:02 2019 +0800
+
+    上传
+
+[33mcommit 02bdcef1a18e09b7f89816091602bbe8268d553e[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Thu Dec 12 20:15:10 2019 +0800
+
+    提交
+
+[33mcommit b217a22b76f01432dc9edc8add0a4d12a673da41[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Thu Dec 12 20:08:52 2019 +0800
+
+    上传
+
+[33mcommit 0970304dfc22da6850863fb6e951ff40537ddebf[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Thu Dec 12 19:56:38 2019 +0800
+
+    提交
+
+[33mcommit 8f345f130a62b0b19aa842952e2c820ce2377005[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Thu Dec 12 19:40:19 2019 +0800
+
+    上传
+
+[33mcommit 671a1925d89d5443ae266b2dd6e91795fa002bb6[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Thu Dec 12 18:31:02 2019 +0800
+
+    提交
+
+[33mcommit 99a99bd692c34b15a20ea0ab964e04b4b44d5374[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Thu Dec 12 16:55:16 2019 +0800
+
+    info
+
+[33mcommit 2b0955a6272ed7d66d2286d450c3c0a712236d00[m
+Author: Z-M-R <‘2417894482@qq.com>
+Date:   Thu Dec 12 16:43:51 2019 +0800
+
+    init
