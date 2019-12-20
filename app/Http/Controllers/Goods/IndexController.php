@@ -9,6 +9,7 @@ class IndexController extends Controller
 {
     public function detail()
     {
+        //商品详情
         return view('goods.detail');
     }
 }
