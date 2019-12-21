@@ -33,7 +33,7 @@ class WxSendmsgController extends AdminController
         $url='https://api.weixin.qq.com/cgi-bin/message/mass/send?access_token='.$this->access_token.'';
 
 
-        $msg = date('Y-m-d H:i:s').'发给你了，收到了吗？';
+        $msg = date('Y-m-d H:i:s').'发送消息';
 
 
         $data=[
