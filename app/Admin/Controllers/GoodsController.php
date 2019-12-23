@@ -47,9 +47,9 @@ class GoodsController extends AdminController
         $show = new Show(GoodsModel::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('goods_name', __('Goods name'));
-        $show->field('img', __('Img'));
-        $show->field('price', __('Price'));
+        $show->field('goods_name', __('昵称'));
+        $show->field('img', __('图片'));
+        $show->field('price', __('价钱'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -67,7 +67,7 @@ class GoodsController extends AdminController
 
         $form->text('goods_name', __('商品名称'));
         $form->image('img', __('图片'));
-        $form->number('price', __('Price'));
+        $form->number('price', __('价钱'));
         $form->ckeditor('desc');
 
         return $form;
