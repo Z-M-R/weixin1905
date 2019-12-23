@@ -349,9 +349,5 @@ class WxController extends Controller
 
     }
 
-    public function er()
-    {
-        
-    }
 
 }
