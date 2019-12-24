@@ -45,6 +45,7 @@ Route::get('/wx/flush/access_token','WeiXin\WxController@flushAccessToken');  //
 Route::get('/wx/menu','WeiXin\WxController@createMenu');  // 创建菜单
 Route::get('/wx/sendmsg','WeiXin\WxSendmagController@sendMsg');  // 计划任务
 Route::get('/wx/qrcode','WeiXin\WxQRController@qrcode');  // 计划任务
+Route::get('/wx/newyear','WeiXin\WxController@newYear');  // 计划任务
 
 
 
