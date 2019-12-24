@@ -344,7 +344,7 @@ class WxController extends Controller
 
     }
 
-    //元旦活动
+    //元旦大放送
     public function newYear()
     {
         $wx_appid = env('WX_APPID');
@@ -362,7 +362,7 @@ class WxController extends Controller
         
         return view('weixin.newyear',$data);
     }
-    // 计算jsapi签名
+    // 计算 jsapi 签名
     public function signature($noncestr,$timestamp,$url)
     {
         $noncestr = $noncestr;

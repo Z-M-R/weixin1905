@@ -32,7 +32,7 @@
                 // 发送给朋友
                 wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
                   wx.updateAppMessageShareData({ 
-                    title: '瞧一瞧看一看', // 分享标题
+                    title: '瞧一瞧看一看，本店大放送', // 分享标题
                     desc: '元旦促销', // 分享描述
                     link: 'http://weixin1905.zmrzzj.com/wx/newyear', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
                     imgUrl: 'http://weixin1905.zmrzzj.com/img/2ha.jpg', // 分享图标

@@ -13,7 +13,7 @@ class WxUserModel extends Model
 
 
     /**
-     * 获取jsapi_ticket
+     * 获取 jsapi_ticket
      * @return mixed
      */
     public static function getJsapiTicket()
