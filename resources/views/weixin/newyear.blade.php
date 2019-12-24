@@ -21,31 +21,7 @@
               signature: '{{$signature}}',// 必填，签名
               jsApiList: ['updateAppMessageShareData','updateTimelineShareData'] // 必填，需要使用的JS接口列表
             });
-            wx.ready(function(){
-                // 发送给朋友
-                wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
-                  wx.updateAppMessageShareData({ 
-                    title: '瞧一瞧看一看，本店大放送', // 分享标题
-                    desc: '元旦促销', // 分享描述
-                    link: 'http://weixin1905.zmrzzj.com/wx/newyear', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                    imgUrl: 'http://weixin1905.zmrzzj.com/img/2ha.jpg', // 分享图标
-                    success: function () {
-                      // 设置成功
-                    }
-                  })
-                }); 
-                // 分享到盆友圈
-                wx.ready(function () {      //需在用户可能点击分享按钮前就先调用
-                  wx.updateTimelineShareData({ 
-                    title: '走过路过不要错过', // 分享标题
-                    link: 'http://weixin1905.zmrzzj.com/wx/newyear', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                    imgUrl: 'http://weixin1905.zmrzzj.com/img/2ha.jpg', // 分享图标
-                    success: function () {
-                      // 设置成功
-                    }
-                  })
-                }); 
-            });
+            
         </script>
 
 

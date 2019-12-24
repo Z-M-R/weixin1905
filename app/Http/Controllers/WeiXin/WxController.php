@@ -352,6 +352,7 @@ class WxController extends Controller
         $timestamp = time();
         $url = env('APP_URL') . $_SERVER['REQUEST_URI'];    //当前页面的URL
         $signature = $this->signature($noncestr,$timestamp,$url);
+        // print_r($signature);die;
         
         $data = [
             'appid'         => $wx_appid,
