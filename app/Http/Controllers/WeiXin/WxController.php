@@ -91,8 +91,11 @@ class WxController extends Controller
            
             //判断用户是否已存在
             $u = WxUserModel::where(['openid'=>$openid])->first();
+            $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
+                 $user_info = file_get_contents($url);       //
+                 $n = json_decode($user_info,true);
             if($u){
-                $msg = '欢迎回来'.$nickname;
+                $msg = '欢迎回来'.$n['nickname'];
                 $xml = '<xml>
                 <ToUserName><![CDATA['.$openid.']]></ToUserName>
                 <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
@@ -120,7 +123,7 @@ class WxController extends Controller
                 //  echo __LINE__;die;
                  //openid 入库
                  $uid = WxUserModel::insertGetId($user_data);
-                 $msg = "谢谢关注".$nickname;
+                 $msg = "谢谢关注".$u['nickname'];
                  //回复用户关注
                  $xml = '<xml>
                 <ToUserName><![CDATA['.$openid.']]></ToUserName>
