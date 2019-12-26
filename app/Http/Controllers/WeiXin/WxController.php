@@ -325,22 +325,12 @@ class WxController extends Controller
             'button' =>[
                 [
                     'type' => 'click',
-                    'name' => '获取天气',
+                    'name' => '签到',
                     'key' => 'weather'
                 ],
                 [
                     'type'  => 'view',
-                    'name'  => '投票',
-                    'url'   => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe859cb9513f3030c&redirect_uri='.$redirect_uri.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
-                ],
-                [
-                    'type'  => 'view',
-                    'name'  => '签到',
-                    'url'   => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe859cb9513f3030c&redirect_uri='.$redirect_uri.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
-                ],
-                [
-                    'type'  => 'view',
-                    'name'  => '积分查询',
+                    'name'  => '查询积分',
                     'url'   => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe859cb9513f3030c&redirect_uri='.$redirect_uri.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
                 ],
             ]
