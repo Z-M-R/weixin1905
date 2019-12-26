@@ -92,7 +92,7 @@ class WxController extends Controller
             //判断用户是否已存在
             $u = WxUserModel::where(['openid'=>$openid])->first();
             if($u){
-                $msg = '欢迎回来';
+                $msg = '欢迎回来'.$nickname;
                 $xml = '<xml>
                 <ToUserName><![CDATA['.$openid.']]></ToUserName>
                 <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
@@ -120,7 +120,7 @@ class WxController extends Controller
                 //  echo __LINE__;die;
                  //openid 入库
                  $uid = WxUserModel::insertGetId($user_data);
-                 $msg = "谢谢关注";
+                 $msg = "谢谢关注".$nickname;
                  //回复用户关注
                  $xml = '<xml>
                 <ToUserName><![CDATA['.$openid.']]></ToUserName>
