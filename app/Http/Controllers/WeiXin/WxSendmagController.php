@@ -24,7 +24,20 @@ class WxSendmagController extends Controller
 
         $url='https://api.weixin.qq.com/cgi-bin/message/mass/send?access_token='.$this->access_token.'';
 
-        $msg = date('Y-m-d H:i:s') . '尊敬的用户您好，目前公司开展签到送积分兑换活动，详情请进入公众号查看。';
+        // 获取天气
+        $weather_api = 'https://free-api.heweather.net/s6/weather/now?location=beijing&key=0f389fa62c0f4c4f89276a68a02bb530';
+            $weather_info = file_get_contents($weather_api);
+            $weather_info_arr = json_decode($weather_info,true);
+            // echo '<pre>';print_r($weather_info_arr);echo '</pre>';
+
+            $cond_txt = $weather_info_arr['HeWeather6'][0]['now']['cond_txt'];
+            $tmp = $weather_info_arr['HeWeather6'][0]['now']['tmp'];
+            $wind_dir = $weather_info_arr['HeWeather6'][0]['now']['wind_dir'];
+
+            $msg = $cond_txt . '温度:' . $tmp . '风向:' . $wind_dir;
+
+
+        $msg = date('Y-m-d H:i:s') . $msg ;
 
 
         $data=[
