@@ -24,7 +24,7 @@ class WxSendmsgController extends Controller
 
         $url='https://api.weixin.qq.com/cgi-bin/message/mass/send?access_token='.$this->access_token;
 
-        $msg = '尊敬的用户您好，目前公司开展签到送积分兑换活动，详情请进入公众号查看';
+        $msg = date('Y-m-d H:i:s') .'尊敬的用户您好，目前公司开展签到送积分兑换活动，详情请进入公众号查看';
 
 
         $data=[
