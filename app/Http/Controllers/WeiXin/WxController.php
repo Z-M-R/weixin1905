@@ -333,6 +333,16 @@ class WxController extends Controller
                     'name'  => '投票',
                     'url'   => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe859cb9513f3030c&redirect_uri='.$redirect_uri.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
                 ],
+                [
+                    'type'  => 'view',
+                    'name'  => '签到',
+                    'url'   => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe859cb9513f3030c&redirect_uri='.$redirect_uri.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
+                ],
+                [
+                    'type'  => 'view',
+                    'name'  => '积分查询',
+                    'url'   => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe859cb9513f3030c&redirect_uri='.$redirect_uri.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
+                ],
             ]
         ];
 
